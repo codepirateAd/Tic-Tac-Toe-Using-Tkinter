@@ -37,7 +37,7 @@ def check_win(p,btns):   #called inside insert_val()
         x=True
     if(x):
         label.configure(text=p+" WON!!!",foreground="orange")
-        with open('score.txt','a') as op:
+        with open('scores/score.txt','a') as op:
             time_current=datetime.now()
             time_year=time_current.strftime("%Y")
             time_month=time_current.strftime("%B")
@@ -118,7 +118,7 @@ s.configure('my.TButton',font=('Helvetica',30))
 
 #Second Page
 def score():
-    with open('score.txt','r') as op:
+    with open('scores/score.txt','r') as op:
         edit_data=op.readlines()
         c=2
         # print(edit_data)
@@ -129,7 +129,7 @@ def score():
             label_a.grid(row=c,column=0,sticky=tk.W)
             c+=1
 def reset():
-    with open('score.txt','w+') as op:
+    with open('scores/score.txt','w+') as op:
         edit_data=op.readlines()
         c=2
         zz=2
